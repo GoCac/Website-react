@@ -1,62 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Marked from 'marked';
-// import highlightjs from 'highlight.js';
-// import './index.css';
-// import './default.css';
+import {VelocityComponent} from 'velocity-react';
 import styles from './index.css.js'
 import TopMenu from './components/topMenu/TopMenu';
 import HeaderBriefInfo from './components/headerBriefInfo/HeaderBriefInfo';
-
-// highlightjs.initHighlightingOnLoad()
-//
-// // Create your custom renderer.
-// const renderer = new Marked.Renderer();
-// renderer.code = (code, language) => {
-//   // Check whether the given language is valid for highlight.js.
-//   const validLang = !!(language && highlightjs.getLanguage(language));
-//   // Highlight only if the language is valid.
-//   const highlighted = validLang ? highlightjs.highlight(language, code).value : code;
-//   // Render the highlighted code with `hljs` class.
-//
-//   return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`;
-// };
-
-// Set the renderer to marked.
-// Marked.setOptions({ renderer });
-
-// class MarkdownExample extends React.Component {
-//   state = {
-//     markdown: "读取中..."
-//   }
-//   componentWillMount() {
-//     const readmePath = require("./README.md");
-//     fetch(readmePath)
-//       .then(response => {
-//         return response.text()
-//       })
-//       .then(text => {
-//         setTimeout(function() {
-//           this.setState({
-//             markdown: Marked(text)
-//             });
-//         }.bind(this), 1400);
-//       })
-//   }
-//
-//   getMarkdownText() {
-//     const markdown = this.state.markdown;
-//     return { __html: markdown };
-//   }
-//
-//   render() {
-//     return (
-//         <div style={{backgroundColor: '#fff'}}>
-//             <div dangerouslySetInnerHTML={this.getMarkdownText()} />
-//         </div>
-//     )
-//   }
-// }
 
 class TextDemo extends React.Component {
     render() {
@@ -80,22 +27,32 @@ ReactDOM.render(
         </div>
         <HeaderBriefInfo/>
     </div>
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
-    <TextDemo />
+    <VelocityComponent
+        runOnMount
+        delay={1400}
+        duration={400}
+        easing={'ease-in-out'}
+        animation={{opacity: 1, marginTop: "0px"}}
+    >
+        <div style={{opacity: 0, marginTop: "60px"}}>
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+            <TextDemo />
+        </div>
+    </VelocityComponent>)
   {/*<MarkdownExample />*/}
 </div>,
   document.getElementById('root')

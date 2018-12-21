@@ -100,8 +100,8 @@ export default class TopMenu extends Component {
                 <div style={styles.horizontalContainer}>
                     <VelocityComponent
                         runOnMount
-                        delay={1000}
-                        duration={400}
+                        delay={2000}
+                        duration={700}
                         easing={'ease-in-out'}
                         animation={{opacity: 1}}
                     >

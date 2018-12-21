@@ -9,7 +9,8 @@ export default class HeaderBriefInfo extends Component {
             <div style={styles.container}>
                 <VelocityComponent
                     runOnMount
-                    duration={500}
+                    delay={1000}
+                    duration={400}
                     easing={'ease-out'}
                     animation={{opacity: 1, marginTop: '0px'}}
                 >
@@ -20,8 +21,8 @@ export default class HeaderBriefInfo extends Component {
 
                 <VelocityComponent
                     runOnMount
-                    delay={400}
-                    duration={500}
+                    delay={1400}
+                    duration={400}
                     easing={'ease-out'}
                     animation={{opacity: 1, marginTop: '20px'}}
                 >
