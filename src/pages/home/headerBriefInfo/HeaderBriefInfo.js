@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from './HeaderBriefInfo.css';
-import LineView from './../common/lineView/LineView';
+import LineView from './../../../components/common/lineView/LineView';
 import {VelocityComponent} from 'velocity-react';
 
 export default class HeaderBriefInfo extends Component {

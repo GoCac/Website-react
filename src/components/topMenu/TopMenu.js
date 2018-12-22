@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import styles from './TopMenu.css';
 import {VelocityComponent} from 'velocity-react'
 import UnderlineButton from './../common/underlineButton/UnderlineButton';
@@ -11,7 +12,6 @@ import {
 } from './../../config/Configuration';
 
 export default class TopMenu extends Component {
-
     constructor(props) {
         super(props);
 
@@ -98,6 +98,8 @@ export default class TopMenu extends Component {
                         </VelocityComponent>) : null
                 }
                 <div style={styles.horizontalContainer}>
+
+                <Link to="/">
                     <VelocityComponent
                         runOnMount
                         delay={2200}
@@ -105,12 +107,13 @@ export default class TopMenu extends Component {
                         easing={'ease-in-out'}
                         animation={{opacity: 1}}
                     >
-                        <img
-                            src={require('./../../assets/top_menu_icon.png')}
-                            alt={''}
-                            style={styles.image}
-                        />
+                            <img
+                                src={require('./../../assets/top_menu_icon.png')}
+                                alt={''}
+                                style={styles.image}
+                            />
                     </VelocityComponent>
+                </Link>
                     {
                         this.state.screenWidth >= 560 ? (
                             <VelocityComponent
@@ -124,23 +127,27 @@ export default class TopMenu extends Component {
                                         buttonTitle={"WORK"}
                                         underlineColor={Color_Theme_Green}
                                         onClick={this._onWork.bind(this)}
+                                        navigateTo={'/work'}
                                     />
                                     <div style={styles.btnHorizontalSpace}/>
                                     <UnderlineButton
                                         buttonTitle={"ABOUT"}
                                         underlineColor={Color_Theme_Red}
                                         onClick={this._onAbout.bind(this)}
+                                        navigateTo={'/about'}
                                     />
                                     <div style={styles.btnHorizontalSpace}/>
                                     <UnderlineButton
                                         buttonTitle={"BLOG"}
                                         underlineColor={Color_Theme_Blue}
                                         onClick={this._onBlog.bind(this)}
+                                        navigateTo={'/blog'}
                                     />
                                     <div style={styles.btnHorizontalSpace}/>
                                     <UnderlineButton
                                         buttonTitle={"CONTACT"}
                                         onClick={this._onContact.bind(this)}
+                                        navigateTo={'/contact'}
                                     />
                                 </div>
                             </VelocityComponent>) : (

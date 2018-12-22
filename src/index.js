@@ -1,19 +1,45 @@
 import React from 'react';
+import {Route, BrowserRouter} from 'react-router-dom';
+import CreateReactClass from 'create-react-class';
 import ReactDOM from 'react-dom';
-import styles from './index.css.js';
-import TopMenu from './components/topMenu/TopMenu';
-import HeaderBriefInfo from './components/headerBriefInfo/HeaderBriefInfo';
-import MarkdownContainer from './components/markdown/MarkdownContainer';
+import Home from './pages/home/Home'
+
+const About = CreateReactClass({
+    render() {
+        return <h3>About</h3>
+    }
+})
+
+const Blog = CreateReactClass({
+    render() {
+        return (
+            <h2>Blog</h2>
+        )
+    }
+})
+
+const Work = CreateReactClass({
+    render() {
+        return <h3>Work</h3>
+    }
+})
+
+const Contact = CreateReactClass({
+    render() {
+        return <h3>Contact</h3>
+    }
+})
+
 
 ReactDOM.render(
-    <div style={styles.body}>
-        <div style={styles.headerContainer}>
-            <div style={styles.menuContainer}>
-                <TopMenu/>
-            </div>
-            <HeaderBriefInfo/>
+    <BrowserRouter>
+        <div>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/blog" component={Blog} />
+            <Route path="/work" component={Work} />
+            <Route path="/contact" component={Contact} />
         </div>
-        <MarkdownContainer filePath={require('./README的副本.md')}/>
-    </div>,
+    </BrowserRouter>,
     document.getElementById('root')
 );

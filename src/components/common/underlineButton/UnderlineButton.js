@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './UnderlineButton.css';
 import { VelocityComponent } from 'velocity-react';
@@ -13,7 +14,8 @@ export default class UnderlineButton extends Component {
         fontSize: PropTypes.string,
         titleColor: PropTypes.string,
         underlineColor: PropTypes.string,
-        onClick: PropTypes.func
+        onClick: PropTypes.func,
+        navigateTo: PropTypes.string
     };
 
     /**
@@ -24,7 +26,8 @@ export default class UnderlineButton extends Component {
         fontSize: '12px',
         titleColor: Color_Theme_Black,
         underlineColor: Color_Theme_Black,
-        onClick: (() => { alert('没有设置onClick') })
+        onClick: (() => { alert('没有设置onClick') }),
+        navigateTo: '/'
     };
 
     constructor(props) {
@@ -80,17 +83,19 @@ export default class UnderlineButton extends Component {
         }
         return(
             <div>
-                <button
-                    style={this._getButtonStyles()}
-                    onClick={this.props.onClick}
-                    onMouseEnter={this._onMouseEnter.bind(this)}
-                    onMouseLeave={this._onMouseLeave.bind(this)}
-                >
-                    {this.props.buttonTitle}
-                    <VelocityComponent {...animationProps}>
-                        <div style={this._getUnderlineStyles()} />
-                    </VelocityComponent>
-                </button>
+                <Link to={this.props.navigateTo} style={{textDecoration:'none'}}>
+                    <button
+                        style={this._getButtonStyles()}
+                        onClick={this.props.onClick}
+                        onMouseEnter={this._onMouseEnter.bind(this)}
+                        onMouseLeave={this._onMouseLeave.bind(this)}
+                    >
+                        {this.props.buttonTitle}
+                        <VelocityComponent {...animationProps}>
+                            <div style={this._getUnderlineStyles()} />
+                        </VelocityComponent>
+                    </button>
+                </Link>
             </div>
         )
     }

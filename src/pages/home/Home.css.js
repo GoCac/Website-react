@@ -27,5 +27,12 @@ export default {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
+    },
+    itemsContainer: {
+        width: '100%',
+        maxWidth: '1200px',
+
+        flexDirection: 'column',
+        justifyContent: 'flex-start'
     }
 }

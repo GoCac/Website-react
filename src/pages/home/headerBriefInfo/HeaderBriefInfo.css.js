@@ -1,6 +1,6 @@
 import {
     Color_Disable
-} from './../../config/Configuration'
+} from './../../../config/Configuration'
 
 export default {
     container: {
