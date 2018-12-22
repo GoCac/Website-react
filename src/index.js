@@ -4,20 +4,46 @@ import {VelocityComponent} from 'velocity-react';
 import styles from './index.css.js'
 import TopMenu from './components/topMenu/TopMenu';
 import HeaderBriefInfo from './components/headerBriefInfo/HeaderBriefInfo';
+import './markdown.css';
 
-class TextDemo extends React.Component {
-    render() {
-        const text = 'Launching an App is a complicated and subtle process and the ramifications on launch times of different App design patterns are often non-obvious. Come learn what happens in the time between when an App begins launching and when the main() function gets control and how that time relates to the code and structure of your App. Learn about the inner details of the dynamic loader, dyld, and best practices for structuring your code to perform at its best from the very start.\n'
-        return (
-            <div style={{backgroundColor: '#fff'}}>
-              <div>
-                  {text}
-              </div>
-            </div>
-        )
-    }
+import Showdown from 'showdown';
+
+class MarkdownExample extends React.Component {
+  state = {
+    markdown: "读取中..."
+  }
+  componentWillMount() {
+    const readmePath = require("./README的副本.md");
+    fetch(readmePath)
+      .then(response => {
+        return response.text()
+      })
+      .then(text => {
+        setTimeout(function() {
+            var converter = new Showdown.Converter()
+            converter.setFlavor('github')
+            this.setState({
+                markdown: converter.makeHtml(text)
+            });
+        }.bind(this), 1400);
+      })
+  }
+
+  getMarkdownText() {
+    const markdown = this.state.markdown;
+    return { __html: markdown };
+  }
+
+  render() {
+    return (
+        <div style={{backgroundColor: '#fff'}}>
+            <div 
+                dangerouslySetInnerHTML={this.getMarkdownText()} 
+            />
+        </div>
+    )
+  }
 }
-// ========================================
 
 ReactDOM.render(
 <div style={styles.body}>
@@ -27,33 +53,20 @@ ReactDOM.render(
         </div>
         <HeaderBriefInfo/>
     </div>
-    <VelocityComponent
-        runOnMount
-        delay={1400}
-        duration={400}
-        easing={'ease-in-out'}
-        animation={{opacity: 1, marginTop: "0px"}}
-    >
-        <div style={{opacity: 0, marginTop: "60px"}}>
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-            <TextDemo />
-        </div>
-    </VelocityComponent>)
-  {/*<MarkdownExample />*/}
+
+    <div style={{width: '100%', maxWidth: '1200px', wordWrap:"break-word"}}>
+        <VelocityComponent
+            runOnMount
+            delay={1400}
+            duration={400}
+            easing={'ease-in-out'}
+            animation={{opacity: 1, marginTop: "0px"}}
+        >
+            <div style={{opacity: 0, marginTop: "60px"}}>
+                <MarkdownExample />
+            </div>
+        </VelocityComponent>
+    </div>
 </div>,
   document.getElementById('root')
 );

@@ -1,0 +1,12 @@
+/* markdown 样式 */
+
+/* 代码块自动换行 */
+code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* 图片最大与屏幕同宽 */
+img {
+  max-width: 100%;
+}
