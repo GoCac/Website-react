@@ -9,10 +9,17 @@ export default {
         flexDirection: 'column',
         alignItems: 'flex-start'
     },
-    lineContainer: {//动画入场之前的布局
-        marginTop: '60px',
-        opacity: 0
+    
+    line_animation_start: {
+        opacity: 0, 
+        marginTop: "60px"
     },
+
+    line_animation_end: {
+        opacity: 1,
+        marginTop: "0px"
+    },
+    
     textContainer: {//动画入场之前的布局
         marginTop: '60px',
         opacity: 0

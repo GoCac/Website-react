@@ -1,7 +1,7 @@
 import {Color_Theme_Black} from '../../../config/Configuration'
 export default {
     container: {
-        webkitTapHighlightColor: 'transparent',
+        WebkitTapHighlightColor: 'transparent',
         height: '16px',
         width: '22px',
         display: 'flex',

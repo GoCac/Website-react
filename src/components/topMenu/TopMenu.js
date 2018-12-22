@@ -100,13 +100,14 @@ export default class TopMenu extends Component {
                 <div style={styles.horizontalContainer}>
                     <VelocityComponent
                         runOnMount
-                        delay={2000}
+                        delay={2200}
                         duration={700}
                         easing={'ease-in-out'}
                         animation={{opacity: 1}}
                     >
                         <img
                             src={require('./../../assets/top_menu_icon.png')}
+                            alt={''}
                             style={styles.image}
                         />
                     </VelocityComponent>

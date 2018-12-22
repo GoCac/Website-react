@@ -44,10 +44,12 @@ export default class MenuButton extends Component{
             case ButtonState.SELECTED:
                 selected = true;
                 break;
+            default:
+                selected = false;
         }
-        this.state = {
+        this.setState({
             selected: selected
-        };
+        })
     }
 
     _onOpen() {

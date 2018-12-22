@@ -12,17 +12,17 @@ export default class HeaderBriefInfo extends Component {
                     delay={1000}
                     duration={400}
                     easing={'ease-out'}
-                    animation={{opacity: 1, marginTop: '0px'}}
+                    animation={styles.line_animation_end}
                 >
-                    <div style={styles.lineContainer}>
+                    <div style={styles.line_animation_start}>
                         <LineView/>
                     </div>
                 </VelocityComponent>
 
                 <VelocityComponent
                     runOnMount
-                    delay={1400}
-                    duration={400}
+                    delay={1150}
+                    duration={600}
                     easing={'ease-out'}
                     animation={{opacity: 1, marginTop: '20px'}}
                 >
