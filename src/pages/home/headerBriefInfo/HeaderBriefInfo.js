@@ -28,7 +28,7 @@ export default class HeaderBriefInfo extends Component {
                 >
                     <div style={styles.textContainer}>
                         <a style={styles.text}>Online portfolio and blog of </a>
-                        <em style={{fontSize: '14px'}}>Youhao Gong</em>
+                        <em style={{fontSize: '15px'}}>宫酉昊 Gong Youhao</em>
                         <a style={styles.text}>,</a>
                         <br/>
                         <a style={styles.text}>a Shanghai based software engineer.</a>

@@ -66,21 +66,21 @@ export default class TopMenu extends Component {
         let drawerAnimation;
         if (this.state.showDrawer) {
             drawerAnimation = {
-                duration: 250,
+                duration: 500,
                 animation: {
-                    marginTop: '0px',
+                    marginTop: ['0px', [250, 0]],// 随便调的数值 参照 http://www.mrfront.com/docs/velocity.js/option.html#J_Easing
                     opacity: 1
                 },
                 easing: 'ease-out'
             }
         } else {
             drawerAnimation = {
-                duration: 250,
+                duration: 200,
                 animation: {
                     marginTop: '-448px',
                     opacity: 0
                 },
-                easing: 'ease-out'
+                easing: 'linear'
             }
         }
 
@@ -99,21 +99,21 @@ export default class TopMenu extends Component {
                 }
                 <div style={styles.horizontalContainer}>
 
-                <Link to="/">
-                    <VelocityComponent
-                        runOnMount
-                        delay={2200}
-                        duration={700}
-                        easing={'ease-in-out'}
-                        animation={{opacity: 1}}
-                    >
-                            <img
-                                src={require('./../../assets/top_menu_icon.png')}
-                                alt={''}
-                                style={styles.image}
-                            />
-                    </VelocityComponent>
-                </Link>
+                    <Link to="/">
+                        <VelocityComponent
+                            runOnMount
+                            delay={2200}
+                            duration={700}
+                            easing={'ease-in-out'}
+                            animation={{opacity: 1}}
+                        >
+                                <img
+                                    src={require('./../../assets/top_menu_icon.png')}
+                                    alt={''}
+                                    style={styles.image}
+                                />
+                        </VelocityComponent>
+                    </Link>
                     {
                         this.state.screenWidth >= 560 ? (
                             <VelocityComponent

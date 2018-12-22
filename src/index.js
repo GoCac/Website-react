@@ -4,29 +4,67 @@ import CreateReactClass from 'create-react-class';
 import ReactDOM from 'react-dom';
 import Home from './pages/home/Home'
 
+import styles from './pages/home/Home.css.js'
+import MarkdownContainer from './components/markdownContainer/MarkdownContainer'
+import TopMenu from './components/topMenu/TopMenu';
+
 const About = CreateReactClass({
     render() {
-        return <h3>About</h3>
+        return <div style={styles.body}>
+                    <div style={styles.headerContainer}>
+                        <div style={styles.menuContainer}>
+                            <TopMenu/>
+                        </div>
+                    </div>
+                    <div style={styles.itemsContainer}>
+                        <MarkdownContainer filePath={require('./README的副本.md')}/>
+                    </div>
+        </div>
     }
 })
 
 const Blog = CreateReactClass({
     render() {
-        return (
-            <h2>Blog</h2>
-        )
+        return <div style={styles.body}>
+                    <div style={styles.headerContainer}>
+                        <div style={styles.menuContainer}>
+                            <TopMenu/>
+                        </div>
+                    </div>
+                    <div style={styles.itemsContainer}>
+                        <MarkdownContainer filePath={require('./README的副本.md')}/>
+                    </div>
+        </div>
     }
 })
 
 const Work = CreateReactClass({
     render() {
-        return <h3>Work</h3>
+        return <div style={styles.body}>
+                    <div style={styles.headerContainer}>
+                        <div style={styles.menuContainer}>
+                            <TopMenu/>
+                        </div>
+                    </div>
+                    <div style={styles.itemsContainer}>
+                        <MarkdownContainer filePath={require('./README的副本.md')}/>
+                    </div>
+        </div>
     }
 })
 
 const Contact = CreateReactClass({
     render() {
-        return <h3>Contact</h3>
+        return <div style={styles.body}>
+                    <div style={styles.headerContainer}>
+                        <div style={styles.menuContainer}>
+                            <TopMenu/>
+                        </div>
+                    </div>
+                    <div style={styles.itemsContainer}>
+                        <MarkdownContainer filePath={require('./README的副本.md')}/>
+                    </div>
+        </div>
     }
 })
 

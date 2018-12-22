@@ -7,7 +7,8 @@ export default {
 
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
+        overflowX: 'hidden'
     },
     headerContainer: {
         width: '100%',

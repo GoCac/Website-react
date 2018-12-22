@@ -27,6 +27,6 @@ export default {
     text: {
         color: Color_Disable,
         fontWeight: '100',
-        fontSize: '12px',
+        fontSize: '13px',
     }
 }

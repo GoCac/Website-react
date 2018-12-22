@@ -51,6 +51,7 @@ export default class MenuDrawer extends Component {
                     fontSize={'16px'}
                     underlineColor={Color_Theme_Green}
                     onClick={this._onWork.bind(this)}
+                    navigateTo={'/work'}
                 />
                 <div style={styles.btnVerticalSpace}/>
                 <UnderlineButton
@@ -58,6 +59,7 @@ export default class MenuDrawer extends Component {
                     fontSize={'16px'}
                     underlineColor={Color_Theme_Red}
                     onClick={this._onAbout.bind(this)}
+                    navigateTo={'/about'}
                 />
                 <div style={styles.btnVerticalSpace}/>
                 <UnderlineButton
@@ -65,12 +67,14 @@ export default class MenuDrawer extends Component {
                     fontSize={'16px'}
                     underlineColor={Color_Theme_Blue}
                     onClick={this._onBlog.bind(this)}
+                    navigateTo={'/blog'}
                 />
                 <div style={styles.btnVerticalSpace}/>
                 <UnderlineButton
                     buttonTitle={"CONTACT"}
                     fontSize={'16px'}
                     onClick={this._onContact.bind(this)}
+                    navigateTo={'/contact'}
                 />
             </div>
         )

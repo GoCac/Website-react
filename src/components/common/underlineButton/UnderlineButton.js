@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import styles from './UnderlineButton.css';
+import styles from './UnderlineButton.css.js';
 import { VelocityComponent } from 'velocity-react';
 import { Color_Theme_Black } from './../../../config/Configuration'
 
@@ -23,7 +23,7 @@ export default class UnderlineButton extends Component {
      */
     static defaultProps = {
         buttonTitle: 'Button',
-        fontSize: '12px',
+        fontSize: '13px',
         titleColor: Color_Theme_Black,
         underlineColor: Color_Theme_Black,
         onClick: (() => { alert('没有设置onClick') }),

@@ -11,6 +11,7 @@ export default {
         alignItems: 'center',
     },
     horizontalContainer: {
+        zIndex: '2',
         width: '100%',
         backgroundColor: 'transparent',
 
@@ -20,8 +21,7 @@ export default {
         alignItems: 'center',
     },
     image: {
-        zIndex: '2',
-        height: '60px',
+        height: '80px',
         opacity: 0 //入场动画前透明
     },
     btnContainer: {
